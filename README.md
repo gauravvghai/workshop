@@ -1,2 +1,0 @@
-# workshop
-Html Hints Workshop

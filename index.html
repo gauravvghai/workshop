@@ -5,10 +5,175 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        .custom-btn {
+            background-color: black;
+            color: white;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .card-inner {
+            border: 2px solid;
+            display: inline-block;
+            text-align: center;
+            background-color: coral;
+            margin: auto 5px;
+        }
+        /* body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-wrap: wrap;
+        } */
+        p,h2 {
+            margin: 0;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <form action="">
-        <input type="checkbox">
-    </form>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://mk0speedproimagx0ns8.kinstacdn.com/wp-content/uploads/2019/01/01-vinyl-banners.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://mk0speedproimagx0ns8.kinstacdn.com/wp-content/uploads/2019/01/01-vinyl-banners.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://mk0speedproimagx0ns8.kinstacdn.com/wp-content/uploads/2019/01/01-vinyl-banners.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    <div class="pt-5" style="width: 100%;text-align: center;">
+        <h1>My E-commerce Store</h1>
+    </div>
+    <div>
+        <div class="card" style="width: 18rem;">
+            <img src="https://km.support.apple.com/kb/image.jsp?productid=134325&size=240x240" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title">Mac Book Pro</h5>
+              <p class="card-text">1,00,000</p>
+              <button onclick="makePay()" class="btn btn-primary">Buy Now</button>
+            </div>
+          </div>
+    </div>
+    <!-- <button onclick="makePay()" class="btn">Hello</button> -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+var options = {
+    "key": "rzp_test_Vr6vd1uPZA5DuK", // Enter the Key ID generated from the Dashboard
+    "amount": "415245", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "Acme Corp",
+    "description": "Test Transaction",
+    "image": "https://example.com/your_logo",
+    "order_id": "", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "handler": function (response){
+        alert(response.razorpay_payment_id);
+    },
+    "prefill": {
+        "name": "Gaurav Kumar",
+        "email": "gaurav.kumar@example.com",
+        "contact": "9999999999"
+    },
+    "notes": {
+        "address": "Razorpay Corporate Office"
+    },
+    "theme": {
+        "color": "#3399cc"
+    }
+};
+var rzp1 = new Razorpay(options);
+rzp1.on('payment.failed', function (response){
+        alert(response.error.code);
+        alert(response.error.description);
+        alert(response.error.source);
+        alert(response.error.step);
+        alert(response.error.reason);
+        alert(response.error.metadata.order_id);
+        alert(response.error.metadata.payment_id);
+});
+
+function makePay() {
+    rzp1.open();
+    e.preventDefault();
+}
+
+</script>
+    <!-- <form action="https://www.example.com/payment/success/" method="POST">
+        <script
+            src="https://checkout.razorpay.com/v1/checkout.js"
+            data-key="" // Enter the Test API Key ID generated from Dashboard → Settings → API Keys
+            data-amount="1000" // Amount is in currency subunits. Hence, 29935 refers to 29935 paise or ₹299.35.
+            data-currency="INR"// You can accept international payments by changing the currency code. Contact our Support Team to enable International for your account
+            data-order_id=""// Replace with the order_id generated by you in the backend.
+            data-buttontext="Pay with Razorpay"
+            data-name="HTML HINTS"
+            data-description="This Payment Is For My Workshop"
+            data-image="https://www.htmlhints.com/image/favicon.png"
+            data-prefill.name="Gaurav Kumar"
+            data-prefill.email="gaurav.kumar@example.com"
+            data-theme.color="black"
+        ></script>
+        <input type="hidden" custom="Hidden Element" name="hidden">
+        </form> -->
 </body>
 </html>
