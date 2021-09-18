@@ -57,5 +57,14 @@
             This is my footer
         </footer>
     </section>
+    <script>
+        var arr = [1,2,3,3,2,4,5];
+        var j = arr.filter((ele, pos) => {
+            if(arr.indexOf(ele) !== pos) {
+                return true;
+            }
+        });
+        console.log(j);
+    </script>
 </body>
 </html>
